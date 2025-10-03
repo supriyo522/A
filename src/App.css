@@ -1,0 +1,26 @@
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.output {
+  margin: 20px auto;
+  padding: 10px;
+  min-height: 40px;
+  border: 1px solid #ccc;
+  width: 60%;
+  font-size: 18px;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.key {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
