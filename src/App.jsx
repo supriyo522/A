@@ -4,31 +4,32 @@ import "./App.css";
 function App() {
   const [text, setText] = useState("");
 
-  const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-
   const handleClick = (char) => {
-    setText((prev) => prev + char);
-  };
-
-  const handleBackspace = () => {
-    setText((prev) => prev.slice(0, -1));
+    if (char === "Backspace") {
+      setText((prev) => prev.slice(0, -1));
+    } else {
+      setText((prev) => prev + char);
+    }
   };
 
   return (
-    <div className="app">
-      <h1>Alphabets App</h1>
+    <div className="container">
+      <h1>Alphabet Buttons</h1>
+      <h2>Click on the buttons below to display alphabets</h2>
+      
       <div className="output">{text}</div>
+
       <div className="keyboard">
-        {alphabets.map((char) => (
+        {Array.from({ length: 26 }, (_, i) => (
           <button
-            key={char}
+            key={i}
             className="key"
-            onClick={() => handleClick(char)}
+            onClick={() => handleClick(String.fromCharCode(65 + i))}
           >
-            {char}
+            {String.fromCharCode(65 + i)}
           </button>
         ))}
-        <button className="key" onClick={handleBackspace}>
+        <button className="key" onClick={() => handleClick("Backspace")}>
           Backspace
         </button>
       </div>
