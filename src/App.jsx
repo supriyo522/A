@@ -12,29 +12,30 @@ function App() {
     }
   };
 
-  return (
-    <div className="container">
-      <h1>Alphabet Buttons</h1>
-      <h2>Click on the buttons below to display alphabets</h2>
-      
-      <div className="output">{text}</div>
+ return (
+  <div className="container">
+    <h1>Alphabet Buttons</h1>
+    <h2>Click letters</h2>
+    
+    <div className="output">{text}</div>
 
-      <div className="keyboard">
-        {Array.from({ length: 26 }, (_, i) => (
-          <button
-            key={i}
-            className="key"
-            onClick={() => handleClick(String.fromCharCode(65 + i))}
-          >
-            {String.fromCharCode(65 + i)}
-          </button>
-        ))}
-        <button className="key" onClick={() => handleClick("Backspace")}>
-          Backspace
+    <div className="keyboard">
+      {Array.from({ length: 26 }, (_, i) => (
+        <button
+          key={i}
+          className="key"
+          onClick={() => handleClick(String.fromCharCode(65 + i))}
+        >
+          {String.fromCharCode(65 + i)}
         </button>
-      </div>
+      ))}
+      <button className="key" onClick={() => handleClick("Backspace")}>
+        Backspace
+      </button>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default App;
